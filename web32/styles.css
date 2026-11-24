@@ -419,39 +419,9 @@ body {
 
 .org-deputy-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   width: 100%;
-}
-
-.wakasek-table-wrap {
-  overflow-x: auto;
-  width: 100%;
-}
-
-.wakasek-table {
-  width: 100%;
-  min-width: 680px;
-  border-collapse: collapse;
-  background: var(--white);
-  box-shadow: var(--shadow);
-  text-align: left;
-}
-
-.wakasek-table th,
-.wakasek-table td {
-  padding: 12px 14px;
-  border: 1px solid #dbe5ed;
-  vertical-align: top;
-}
-
-.wakasek-table thead th {
-  background: #d8f0f3;
-  color: var(--primary-dark);
-}
-
-.wakasek-table tbody tr:nth-child(even) {
-  background: #f8fbfc;
 }
 
 .org-deputy-card {
