@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selamat Hari Guru Nasional</title>
+  <meta name="description" content="Tulis terima kasihmu di papan tulis, buat kartu ucapan, dan tempel pesan untuk guru.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="#papan">Hari Guru</a>
+    <nav aria-label="Navigasi utama">
+      <a href="#papan">Papan tulis</a>
+      <a href="#kartu">Kartu ucapan</a>
+      <a href="#dinding">Dinding terima kasih</a>
+      <a href="#kuis">Kuis</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO: papan tulis -->
+    <section id="papan" class="hero" aria-labelledby="judul">
+      <div class="board-frame">
+        <div class="board">
+          <div class="board-text">
+            <h1 id="judul">Terima kasih,<br>Guru.</h1>
+            <p class="board-sub">Hari Guru Nasional jatuh setiap 25 November.</p>
+            <p class="board-message">
+              <span class="visually-hidden">Selamat Hari Guru Kepada Semua Guru Hebat DI SMPN 32</span>
+              <span id="board-message-animation" aria-hidden="true">Selamat Hari Guru Kepada Semua Guru Hebat DI SMPN 32</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KARTU UCAPAN -->
+    <section id="kartu" class="section" aria-labelledby="judul-kartu">
+      <div class="section-head">
+        <h2 id="judul-kartu">Buat kartu ucapan</h2>
+        <p>Isi formulir, kartunya langsung muncul di sebelah. Salin teksnya lalu kirim lewat chat.</p>
+      </div>
+
+      <div class="card-lab">
+        <form id="card-form" class="card-form" autocomplete="off">
+          <label for="f-guru">Nama guru</label>
+          <input id="f-guru" type="text" maxlength="40" placeholder="Contoh: Bu Ratna">
+
+          <label for="f-mapel">Mengajar apa</label>
+          <input id="f-mapel" type="text" maxlength="40" placeholder="Contoh: IPA">
+
+          <label for="f-pesan">Pesanmu</label>
+          <textarea id="f-pesan" rows="4" maxlength="220" placeholder="Tulis dengan kata-katamu sendiri, atau pilih contoh di bawah."></textarea>
+          <div class="chips" id="chips" aria-label="Contoh pesan">
+            <button type="button" class="chip" data-msg="Terima kasih sudah sabar menjelaskan berulang kali sampai aku paham.">Sabar menjelaskan</button>
+            <button type="button" class="chip" data-msg="Ilmu yang Ibu/Bapak ajarkan masih kupakai sampai hari ini. Terima kasih sudah percaya padaku.">Ilmu yang terpakai</button>
+            <button type="button" class="chip" data-msg="Terima kasih sudah jadi orang yang mengingatkanku bahwa aku bisa.">Percaya padaku</button>
+          </div>
+
+          <label for="f-dari">Dari</label>
+          <input id="f-dari" type="text" maxlength="40" placeholder="Namamu">
+        </form>
+
+        <div class="card-side">
+          <article class="paper" id="paper" aria-live="polite">
+            <svg class="apple" viewBox="0 0 48 52" aria-hidden="true">
+              <path d="M24 14c-4-5-14-4-16 6-2 11 6 28 14 28 2 0 3-1 5-1s3 1 5 1c8 0 14-14 12-26-2-10-12-11-16-6-1 1-3 1-4-2z" fill="#d6453d"/>
+              <path d="M25 12c0-5 3-9 8-10 0 5-3 9-8 10z" fill="#4d8a4a"/>
+            </svg>
+            <p class="paper-to" id="p-to">Untuk Bapak/Ibu Guru</p>
+            <p class="paper-msg" id="p-msg">Terima kasih sudah mengajarku.</p>
+            <p class="paper-end">Selamat Hari Guru Nasional!</p>
+            <p class="paper-from" id="p-from">— seorang murid</p>
+          </article>
+
+          <div class="card-actions">
+            <button class="btn btn-primary" id="btn-copy" type="button">Salin ucapan</button>
+            <button class="btn" id="btn-share" type="button" hidden>Bagikan</button>
+            <button class="btn" id="btn-confetti" type="button">Hujan konfeti</button>
+          </div>
+          <p class="status" id="card-status" role="status"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DINDING TERIMA KASIH -->
+    <section id="dinding" class="section section-wall" aria-labelledby="judul-dinding">
+      <div class="section-head">
+        <h2 id="judul-dinding">Dinding terima kasih</h2>
+        <p>Tempel satu kalimat untuk guru. Ketuk hati untuk setuju. Tiga catatan pertama adalah contoh, sisanya tersimpan di peramban ini saja.</p>
+      </div>
+
+      <form id="wall-form" class="wall-form" autocomplete="off">
+        <div>
+          <label for="w-name">Namamu</label>
+          <input id="w-name" type="text" maxlength="30" placeholder="Contoh: Dewi, kelas 8" required>
+        </div>
+        <div class="grow">
+          <label for="w-text">Pesan untuk guru (maks. 140 huruf)</label>
+          <input id="w-text" type="text" maxlength="140" placeholder="Tulis satu kalimat." required>
+        </div>
+        <button class="btn btn-primary" type="submit">Tempel</button>
+      </form>
+
+      <ul class="wall" id="wall"></ul>
+    </section>
+
+    <!-- KUIS -->
+    <section id="kuis" class="section" aria-labelledby="judul-kuis">
+      <div class="section-head">
+        <h2 id="judul-kuis">Kuis lima soal</h2>
+        <p>Seberapa kenal kamu dengan Hari Guru dan dunia pendidikan kita?</p>
+      </div>
+      <div class="quiz" id="quiz"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Untuk setiap guru yang pernah menjawab pertanyaan kita dengan sabar.</p>
+    <p class="footer-small">Selamat Hari Guru Nasional, 25 November.</p>
+  </footer>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
